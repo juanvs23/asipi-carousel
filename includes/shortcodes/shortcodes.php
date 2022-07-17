@@ -55,7 +55,7 @@ echo '</style>';
 
 ?>
 
-<div  class="asipi-swiper" id="<?php echo $styleId; ?>"  data-swiper='{"movil":"1","tablet":"2","desktop":"3","autplay":"true"}'>
+<div  class="asipi-swiper" id="<?php echo $styleId; ?>"  data-swiper='{"id":"<?php echo $styleId; ?>","movil":"<?php echo $movil; ?>","tablet":"<?php echo $tablet; ?>","desktop":"<?php echo $desktop; ?>","autplay":"true"}'>
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->

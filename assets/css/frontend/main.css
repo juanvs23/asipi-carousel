@@ -1,3 +1,104 @@
-.asipi-swiper{overflow:hidden;position:relative;width:100%}.asipi-swiper-title{font-size:30px;text-align:center}.swiper-slide{padding:10px}.asipi-button-next,.asipi-button-prev,.swiper-slide{align-items:center;display:flex;justify-content:center}.asipi-button-next,.asipi-button-prev{cursor:pointer;padding:7px 10px;position:absolute;top:50%;transition:.3s;z-index:99}.asipi-button-next svg,.asipi-button-prev svg{fill:#fff;stroke:#767677}.asipi-button-next:hover,.asipi-button-prev:hover{filter:contrast(.5)}.asipi-pagination{display:flex;gap:8px;justify-content:center;margin-top:15px}.asipi-pagination span{height:16px;width:16px}.asipi-pagination span.swiper-pagination-bullet-active{border:2px solid}.asipi-container{position:relative}.asipi-container a.asipi-button{background:#000;border:2px solid #000;color:#fff;font-size:16px;font-weight:700;padding:7px 40px;transition:.3s}.asipi-container a.asipi-button:hover{background:#fff;border:2px solid #fff;color:#000}.asipi-container .asipi-overlay{background:rgba(0,0,0,.3);height:100%;left:0;position:absolute;top:0;transition:.3s;width:100%}.asipi-container:hover .asipi-overlay{background:rgba(0,0,0,.5)}.asipi-container .asipi-text{align-items:center;display:flex;flex-direction:column;justify-content:space-between}.asipi-container .box-design{height:100%;padding:20px;position:absolute;top:0;width:100%}.asipi-button-prev{left:5px}.asipi-button-next{right:5px}
+.asipi-swiper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
-/*# sourceMappingURL=main.css.map*/
+.asipi-swiper-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.asipi-button-prev,
+.asipi-button-next {
+  position: absolute;
+  top: 50%;
+  padding: 7px 10px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.asipi-button-prev svg,
+.asipi-button-next svg {
+  fill: white;
+  stroke: #767677;
+}
+.asipi-button-prev:hover,
+.asipi-button-next:hover {
+  filter: contrast(0.5);
+}
+
+.asipi-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.asipi-pagination span {
+  height: 16px;
+  width: 16px;
+}
+.asipi-pagination span.swiper-pagination-bullet-active {
+  border: 2px solid;
+}
+
+.asipi-container {
+  position: relative;
+}
+.asipi-container a.asipi-button {
+  padding: 7px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.3s;
+  color: white;
+  background: black;
+  border: 2px solid black;
+}
+.asipi-container a.asipi-button:hover {
+  color: black;
+  background: white;
+  border: 2px solid white;
+}
+.asipi-container .asipi-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.asipi-container:hover .asipi-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+.asipi-container .asipi-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.asipi-container .box-design {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 20px;
+}
+
+.asipi-button-prev {
+  left: 5px;
+}
+
+.asipi-button-next {
+  right: 5px;
+}

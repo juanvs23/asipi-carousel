@@ -4,13 +4,15 @@ const asipiSwipers = document.querySelectorAll(".asipi-swiper");
 
 if (asipiSwipers) {
   asipiSwipers.forEach((asipiSwiper, i) => {
-    const { movil, tablet, desktop } = JSON.parse(asipiSwiper.dataset.swiper);
+    const { id, movil, tablet, desktop } = JSON.parse(
+      asipiSwiper.dataset.swiper
+    );
 
-    const swiper = new Swiper(asipiSwiper, {
+    new Swiper(asipiSwiper, {
       modules: [Navigation, Pagination, Autoplay],
       navigation: {
-        nextEl: ".asipi-button-next",
-        prevEl: ".asipi-button-prev",
+        nextEl: `#${id} .asipi-button-next`,
+        prevEl: `#${id} .asipi-button-prev`,
       },
       breakpoints: {
         0: {
@@ -28,7 +30,7 @@ if (asipiSwipers) {
         delay: 5000,
       },
       pagination: {
-        el: ".asipi-pagination",
+        el: `#${id} .asipi-pagination`,
         type: "bullets",
         clickable: true,
       },
