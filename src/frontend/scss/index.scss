@@ -1,1 +1,99 @@
-@import "./formularios.scss";
+.asipi-swiper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.asipi-swiper-title {
+  text-align: center;
+  font-size: 30px;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.asipi-button-prev,
+.asipi-button-next {
+  position: absolute;
+  top: 50%;
+  padding: 7px 10px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+  svg {
+    fill: white;
+    stroke: #767677;
+  }
+  &:hover {
+    filter: contrast(0.5);
+  }
+}
+.asipi-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  span {
+    height: 16px;
+    width: 16px;
+    &.swiper-pagination-bullet-active {
+      border: 2px solid;
+    }
+  }
+}
+.asipi-container {
+  a.asipi-button {
+    padding: 7px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s;
+    color: white;
+    background: black;
+    border: 2px solid black;
+    &:hover {
+      color: black;
+      background: white;
+      border: 2px solid white;
+    }
+  }
+  position: relative;
+  .asipi-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+  }
+  &:hover {
+    .asipi-overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .asipi-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .box-design {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 20px;
+  }
+}
+.asipi-button-prev {
+  left: 5px;
+}
+.asipi-button-next {
+  right: 5px;
+}
+.asipi-pagination {
+}

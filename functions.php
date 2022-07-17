@@ -15,7 +15,7 @@ if(!function_exists('asipi_carousel_general_localize')){
 if(!function_exists('asipi_carousel_frontend_assets')){
 
     function asipi_carousel_frontend_assets() {
-        wp_enqueue_style('asipi_carousels_frontend',ASIPICAROUSELS_PLUGIN_URL .'assets/css/frontend/styles.css',[],ASIPICAROUSELS_PLUGIN_VERSION,'all');
+        wp_enqueue_style('asipi_carousels_frontend',ASIPICAROUSELS_PLUGIN_URL .'assets/css/frontend/main.css',[],ASIPICAROUSELS_PLUGIN_VERSION,'all');
         wp_enqueue_script('asipi_carousels_frontend',ASIPICAROUSELS_PLUGIN_URL .'assets/js/frontend/main.js',[],ASIPICAROUSELS_PLUGIN_VERSION,true);
         wp_localize_script('asipi_carousels_frontend','asipi_carousels_ajax',asipi_carousel_general_localize());
     }
@@ -33,7 +33,7 @@ if(!function_exists('asipi_carousel_admin_assets')){
         wp_enqueue_script('asipi_carousels_admin',ASIPICAROUSELS_PLUGIN_URL.'assets/js/admin/main.js',['wp-color-picker'],ASIPICAROUSELS_PLUGIN_VERSION,true);
         wp_localize_script('asipi_carousels_admin','asipi_carousels_ajax',asipi_carousel_general_localize());
     }
-    add_action('admin_enqueue_scripts', 'asipi_carousel_admin_assets',10000 );
+    add_action('admin_enqueue_scripts', 'asipi_carousel_admin_assets',9999 );
 
 }
 

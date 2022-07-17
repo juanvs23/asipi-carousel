@@ -1,1 +1,1 @@
-console.log("hola desde plugin");
+import carrusel from "./carrusel";
