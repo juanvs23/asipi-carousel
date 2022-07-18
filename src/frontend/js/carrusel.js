@@ -14,6 +14,10 @@ if (asipiSwipers) {
         nextEl: `#${id} .asipi-button-next`,
         prevEl: `#${id} .asipi-button-prev`,
       },
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+
       breakpoints: {
         0: {
           slidesPerView: movil,

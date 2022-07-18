@@ -14,6 +14,7 @@ function asipi_carousel_shortcode_function( $atts ) {
 	$term = get_term_by('name', $carousel,$asipi_carousel_taxonomy);
 	$t_id = !is_string($term) ?$term->term_id:'';
         $design = get_term_meta( $t_id, 'slider-design-setting', true )?get_term_meta( $t_id, 'slider-design-setting', true ):'no_text';//diseño
+        $fit_image = get_term_meta( $t_id, 'fit_image', true )?get_term_meta( $t_id, 'fit_image', true ):'false';
         $slider_color = get_term_meta( $t_id, 'slider-color-setting', true )?get_term_meta( $t_id, 'slider-color-setting', true ):'#fff';
         $text_color = get_term_meta( $t_id, 'slider-text-color-setting', true )?get_term_meta( $t_id, 'slider-text-color-setting', true ):'#fff';
         $arrow_dots = get_term_meta( $t_id, 'arrow-dots', true )?get_term_meta( $t_id, 'arrow-dots', true ):'0';
@@ -85,20 +86,22 @@ echo '</style>';
 				//image-and-text
 				
 				$featured_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full', true );
+				
 				$slide_color = get_post_meta( get_the_ID(), 'slide-color', true )?get_post_meta( get_the_ID(), 'slide-color', true ):'';
 				$text_button = get_post_meta( get_the_ID(), 'text-button', true )?get_post_meta( get_the_ID(), 'text-button', true ):'Ver más';
-				$url_button = get_post_meta( get_the_ID(), 'url-button', true )?get_post_meta( get_the_ID(), 'url-button', true ):get_the_permalink();
-			    if($design=="no_text"):
+				$url_button = get_post_meta( get_the_ID(), 'url-button', true )?get_post_meta( get_the_ID(), 'url-button', true ):'';
+			    if($design=="no_text" && $url_button!='' ):
 				echo "<a href='{$url_button}'>";
 				endif
 				?>
 				
 				<img id="<?php echo get_the_ID();?>" class="asipi-image" 
+				   <?php echo $fit_image==='true'?'style="width:100%;height:auto;"':''; ?>
 					src="<?php echo $featured_img[0]; ?>" 
 					height="<?php echo $featured_img[2]; ?>" 
 					width="<?php echo $featured_img[1]; ?>" 
 					alt="<?php echo $featured_img[3]==''?get_the_title():$featured_img[3]; ?>" >
-			   <?php if($design=="no_text"): 
+			   <?php if($design=="no_text" &&  $url_button!=''): 
 				echo '</a>';
 			   endif;
 				?>	

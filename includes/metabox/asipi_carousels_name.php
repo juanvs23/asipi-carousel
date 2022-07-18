@@ -5,6 +5,7 @@ function asipi_carousels_name_add_meta_fields($term) {
     
         $t_id = !is_string($term) ?$term->term_id:'';
         $design = get_term_meta( $t_id, 'slider-design-setting', true )?get_term_meta( $t_id, 'slider-design-setting', true ):'no_text';
+        $fit_image = get_term_meta( $t_id, 'fit_image', true )?get_term_meta( $t_id, 'fit_image', true ):'false';
         $slider_color = get_term_meta( $t_id, 'slider-color-setting', true )?get_term_meta( $t_id, 'slider-color-setting', true ):'#fff';
         $text_color = get_term_meta( $t_id, 'slider-text-color-setting', true )?get_term_meta( $t_id, 'slider-text-color-setting', true ):'#fff';
         $arrow_dots = get_term_meta( $t_id, 'arrow-dots', true )?get_term_meta( $t_id, 'arrow-dots', true ):'0';
@@ -28,6 +29,19 @@ function asipi_carousels_name_add_meta_fields($term) {
         </select>
         <p class="description">
             <?php esc_html_e( 'configura como se despliega los datos en el slider', 'asipi-carousels' ); ?>
+        </p>
+    </div>
+    <div class="form-field term-meta-wrap">
+        <label for="term_meta[fit_image]">
+            <b><?php esc_html_e( 'Ajustar imagen', 'asipi-carousels' ); ?></b> 
+        </label>
+        <select name="term_meta[fit_image]"  id="term_meta[fit_image]">
+            <option <?php echo $design=='false'?'selected':''; ?> value="false">No</option>
+            <option <?php echo $fit_image=='true'?'selected':''; ?> value="true">Si</option>
+           
+        </select>
+        <p class="description">
+            <?php esc_html_e( 'Ajusta la imagen al ancho del slider', 'asipi-carousels' ); ?>
         </p>
     </div>
     <div class="form-field term-meta-wrap">
