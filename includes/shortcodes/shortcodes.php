@@ -88,7 +88,9 @@ echo '</style>';
 				$slide_color = get_post_meta( get_the_ID(), 'slide-color', true )?get_post_meta( get_the_ID(), 'slide-color', true ):'';
 				$text_button = get_post_meta( get_the_ID(), 'text-button', true )?get_post_meta( get_the_ID(), 'text-button', true ):'Ver más';
 				$url_button = get_post_meta( get_the_ID(), 'url-button', true )?get_post_meta( get_the_ID(), 'url-button', true ):get_the_permalink();
-			
+			    if($design=="no_text"):
+				echo "<a href='{$url_button}'>";
+				endif
 				?>
 				
 				<img id="<?php echo get_the_ID();?>" class="asipi-image" 
@@ -96,6 +98,11 @@ echo '</style>';
 					height="<?php echo $featured_img[2]; ?>" 
 					width="<?php echo $featured_img[1]; ?>" 
 					alt="<?php echo $featured_img[3]==''?get_the_title():$featured_img[3]; ?>" >
+			   <?php if($design=="no_text"): 
+				echo '</a>';
+			   endif;
+				?>	
+			
 			   <?php if($design=="box"): ?>
 				<div class="asipi-overlay"></div>
 			   <?php endif; ?>
@@ -129,6 +136,7 @@ echo '</style>';
   <?php
  if($arrow_dots =="2" || $arrow_dots =="3" ):
  ?>
+
   <div class="asipi-pagination"></div>
   <?php
 endif;
@@ -146,8 +154,15 @@ endif;
 <?php
 endif;
 ?>
+ <?php
+ //next issue
+ if($arrow_dots =="5"):
+ ?>
   <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div>
+<?php
+endif;
+?>
 </div>
 
 <?php
