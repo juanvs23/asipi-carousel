@@ -11,7 +11,7 @@
  * Plugin Name:       Asipi carousels
  *
  * Description:       Sistema de carruseles
- * Version:           1.0.0
+ * Version:           1.0.3
  * Author:            Juan Carlos Avila
  * Text Domain:       asipi-carousels
  *
@@ -20,7 +20,7 @@
 define('ASIPICAROUSELS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('ASIPICAROUSELS_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ASIPICAROUSELS_PLUGIN_FILE', __FILE__);
-define('ASIPICAROUSELS_PLUGIN_VERSION', '1.0.0');
+define('ASIPICAROUSELS_PLUGIN_VERSION', '1.0.3');
 
 
 
