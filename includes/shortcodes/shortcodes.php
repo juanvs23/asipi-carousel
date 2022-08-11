@@ -90,8 +90,9 @@ echo '</style>';
 				$slide_color = get_post_meta( get_the_ID(), 'slide-color', true )?get_post_meta( get_the_ID(), 'slide-color', true ):'';
 				$text_button = get_post_meta( get_the_ID(), 'text-button', true )?get_post_meta( get_the_ID(), 'text-button', true ):'Ver más';
 				$url_button = get_post_meta( get_the_ID(), 'url-button', true )?get_post_meta( get_the_ID(), 'url-button', true ):'';
+			    $blank = get_post_meta( get_the_ID(), 'url-blank', true )=='on'?'_blank':'_self';
 			    if($design=="no_text" && $url_button!='' ):
-				echo "<a href='{$url_button}'>";
+				echo "<a href='{$url_button}' target='". $blank ."'>";
 				endif
 				?>
 				
@@ -115,7 +116,7 @@ echo '</style>';
 						<?php echo get_the_title();?>
 					</h2>
 
-					<a href="<?php echo $url_button; ?>" class="asipi-button" ><?php echo $text_button; ?></a>
+					<a href="<?php echo $url_button; ?>" target="<?php echo 	$blank; ?>" class="asipi-button" ><?php echo $text_button; ?></a>
 				</div>
 			   <?php endif; ?>
 
