@@ -63,6 +63,8 @@ echo '</style>';
 	<?php
 	$args = array( 
 		'post_type' => $post_type,
+		'orderby' => 'title',
+    'order'   => 'ASC',
     	'tax_query' => array(
 			array(
 				'taxonomy' => $asipi_carousel_taxonomy,
